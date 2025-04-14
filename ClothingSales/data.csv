@@ -1,10 +1,13 @@
-﻿ProductID, ProductName, Size, QuantitySold, Date
-1, T-Shirt, S, 120, 2025-01-01
-2, T-Shirt, M, 150, 2025-01-01
-3, Jeans, M, 200, 2025-01-01
-4, Jeans, L, 180, 2025-01-01
-5, Jacket, S, 100, 2025-01-01
-6, Jacket, M, 130, 2025-01-01
-7, T-Shirt, S, 200, 2025-01-02
-8, Jeans, L, 210, 2025-01-02
-9, Jacket, M, 90, 2025-01-02
+﻿ProductID,ProductName,Size,QuantitySold,Date,Gender
+1,T-Shirt,S,120,2025-01-01,Female
+2,T-Shirt,M,150,2025-01-01,Male
+3,T-Shirt,L,180,2025-01-01,Female
+4,T-Shirt,XL,90,2025-01-01,Male
+5,Hoodie,S,100,2025-01-02,Female
+6,Hoodie,M,130,2025-01-02,Male
+7,Hoodie,L,160,2025-01-02,Female
+8,Hoodie,XL,110,2025-01-02,Male
+9,Jeans,S,70,2025-01-03,Male
+10,Jeans,M,95,2025-01-03,Female
+11,Jeans,L,125,2025-01-03,Male
+12,Jeans,XL,140,2025-01-03,Female
