@@ -7,24 +7,20 @@ data = pd.read_csv('data.csv')
 # Sütun adlarındaki boşlukları temizle
 data.columns = data.columns.str.strip()
 
-# Kontrol amaçlı yazdır (isteğe bağlı)
-print(data.columns)
+# Cinsiyet ve beden bazında satış miktarını grupla
+grouped = data.groupby(['Gender', 'Size'])['QuantitySold'].sum().unstack()
 
-# Beden bazında satışları grupla
-size_sales = data.groupby('Size')['QuantitySold'].sum().sort_values(ascending=False)
+# Eksik değerleri 0 ile doldur
+grouped = grouped.fillna(0)
 
-# En çok satılan bedeni yazdır
-most_sold_size = size_sales.idxmax()
-most_sold_quantity = size_sales.max()
-print(f"En çok satılan beden: {most_sold_size} ({most_sold_quantity} adet)")
+# Grupları görselleştir (bar chart)
+grouped.T.plot(kind='bar', figsize=(10,6))
 
-# Görselleştir
-plt.figure(figsize=(8,5))
-size_sales.plot(kind='bar', color='skyblue')
-plt.title('Toplam Satışa Göre Beden Dağılımı')
+plt.title('Cinsiyete ve Bedene Göre Satış Dağılımı')
 plt.xlabel('Beden')
 plt.ylabel('Satılan Miktar')
 plt.xticks(rotation=0)
+plt.legend(title='Cinsiyet')
 plt.tight_layout()
-plt.savefig("sales_by_size.png")
+plt.savefig("sales_by_gender_and_size.png")
 plt.show()
